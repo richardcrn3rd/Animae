@@ -1,0 +1,5 @@
+button:hover {
+    transition: 2s; color: white;
+    ;
+    border: none;
+}
