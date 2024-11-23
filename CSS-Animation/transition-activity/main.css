@@ -1,4 +1,114 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container styling */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+  opacity: 0; /* Start hidden for animation */
+  animation: fadeInUp 2s forwards;
+}
+
+.caption_media {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Caption overlay styles */
+.caption_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  color: white;
+  padding: 20px;
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 2s forwards;
+  animation-delay: 1s; /* Delay the overlay animation */
+}
+
+.caption_overlay_title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  opacity: 0; /* Hidden initially */
+  animation: slideIn 2s forwards;
+  animation-delay: 1.5s; /* Delay text animation */
+}
+
+.caption_overlay_content {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0; /* Hidden initially */
+  animation: slideIn 2s forwards;
+  animation-delay: 2s; /* Delay text animation */
+}
+
+/* Button styles */
+button {
+  background-color: #f39c12;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e67e22;
+}
+
+/* Animation for fading in and moving up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
 body  {
   font-family: 'Josefin Sans', sans-serif;
@@ -40,7 +150,7 @@ button:hover {
   height: auto;
 }
 
-.caption__overlay_container {
+.caption_overlay_container {
   width: 100%;
   position: absolute;
   top: 50%;
@@ -49,20 +159,27 @@ button:hover {
   padding: 10px;
   color: white;
   opacity: 0;
-  animation: fadeInUp 2s ease-in-out;
+  animation: fadeInUp 2s forwards, moveUp 2s forwards;
+}
+.caption_overlay_container {
+  font-size: 3em;
+  margin-bottom: 10px;
 }
 
 @keyframes fadeInUP {
   0% {
     opacity: 0;
-    transform: translateY(-50%, -60%);
   }
   100% {
     opacity: 1;
-    transform: translateY(-50%, -60%);
   }
 }
-
-/* .caption:hover .caption__overlay {
-  transform: translateY(0);
+@keyframes moveUP {
+  0% {
+    transform: translate(-50%, 50%);
+  }
+  100% {
+    transform: translate(-50%, 50%);
+  }
 } */
+
